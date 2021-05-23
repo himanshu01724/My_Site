@@ -1,0 +1,19 @@
+{% extends 'authenticate\base.html' %}
+
+{% block content%}
+<h2 class = "text-center">Edit Profile</h2>
+    <form method = 'POST' action ="{% url 'edit_profile' %}">
+    {% csrf_token %}
+    {% if form.errors %}
+    <div class="alert alert-warning alert-dismissable" role="alert">
+        <p>Your form has Errors......</p>
+      </div>
+      
+    {% endif %}
+    {{ form.as_p }}
+
+    <input type="submit" value= "Save" class = "btn btn-secondary">
+</form>
+
+
+{% endblock %}

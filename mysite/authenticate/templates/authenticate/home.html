@@ -1,0 +1,13 @@
+{% extends 'authenticate\base.html' %}
+
+{% block content%}
+<h4>This is a authentication website please Register yourself and try to login </h4><a></a></br>
+<div class = "form-text text-muted">
+<p>If you are Already Register and forgot credentials go to edit details</p>
+</div>
+{% if user.is_authenticated %}
+    <p>Name: {{ user.first_name }} {{user.last_name}}</p>
+    <p>Username: {{ user.username }}</p>
+    <p>Email:{{ user.email}}</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'authenticate\base.html' %}
+
+{% block content%}
+<h2 class = "text-center">Register</h2>
+<div class="col-md-6 offset-md-3">
+    <form method = 'POST' action ="{% url 'log' %}">
+    {% csrf_token %}
+    {% if form.errors %}
+    <div class="alert alert-warning alert-dismissable" role="alert">
+        <p>Your form has Errors......</p>
+      </div>
+      
+    {% endif %}
+    {{ form.as_p }}
+
+    <input type="submit" value= "Register" class = "btn btn-secondary">
+</form>
+</div>
+
+
+{% endblock %}
